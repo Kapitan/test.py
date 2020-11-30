@@ -1,3 +1,7 @@
 new_str = input("add new integer: ")
-newint = int(new_str)
-print(newint)
+try:
+    newint = int(new_str)
+    print(newint)
+except:
+    print("Error")
+
