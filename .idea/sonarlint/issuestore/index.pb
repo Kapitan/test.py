@@ -7,3 +7,13 @@
 3tdlesson.py,5/9/59fb5c8aae36e969a38d64fa07a3f837f33df2d8
 <
 4thlesson.py,4/e/4e4a5030db2d8a4502c31d71ab3f003a33eafc80
+6
+rec.py,a/b/abbc8bf7007d77bd6f703f0e13f2282e874af106
+6
+7th.py,7/4/74fdef55e7085547d6f9ce1803cd3d3d3e49172a
+<
+5thlesson.py,3/0/30c26f0043b91a2c1774515dddd7635e59e47da5
+7
+rand.py,8/5/855b5d5b806f7b2aec9043a898633a0dd09eb486
+9
+	les8th.py,8/a/8aae6b3e4867cee974eb7cb2a92bac8b80b510d9
