@@ -1,13 +1,3 @@
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello Стася!'
-
-@app.route('/qwe/')
-def rrt():
-    x = input("enter here")
-    return x
-if __name__ == '__main__':
-    app.run()
+collection = [3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]
+for i in collection:
+    print(collection.count(i))
