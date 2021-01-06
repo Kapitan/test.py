@@ -6,7 +6,7 @@ with open("VLANs.csv", "r") as csv_vlan:
         scvnow.append(i)
 #print(scvnow)
 data = []
-data2 = []
+
 with open("aruba.conf", "r") as config:
     confreader = config.readlines()
     for k, v in enumerate(confreader):
@@ -18,14 +18,12 @@ with open("aruba.conf", "r") as config:
 #print(data)
 for q in data:
     c = [q[2], '', q[1], q[1], "4" ]
-    data2.append(c)
+    scvnow.append(c)
 
-scvnow += data2
 print(scvnow)
 
 with open("newv.csv", "w") as newv:
     writer = csv.writer(newv, delimiter=',', quotechar='\"', quoting=csv.QUOTE_ALL)
     for t in scvnow:
-
         writer.writerow(t)
 
