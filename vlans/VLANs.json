@@ -1,0 +1,1 @@
+[{"Name":"Fabric A","Description":null,"VlanMinimum":4093,"VlanMaximum":4093,"Type":8},{"Name":"Fabric B","Description":null,"VlanMinimum":4092,"VlanMaximum":4092,"Type":8},{"Name":"SERVERS","Description":null,"VlanMinimum":100,"VlanMaximum":100,"Type":4},{"Name":"VLAN 1","Description":"VLAN 1","VlanMinimum":1,"VlanMaximum":1,"Type":2}]
