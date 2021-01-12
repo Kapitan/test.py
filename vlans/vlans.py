@@ -17,7 +17,7 @@ with open("aruba.conf", "r") as config:
 
 #print(data)
 for q in data:
-    c = [q[2], '', q[1], q[1], "4" ]
+    c = [q[2], '', q[1], q[1], "4"]
     scvnow.append(c)
 
 print(scvnow)
