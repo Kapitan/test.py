@@ -55,3 +55,11 @@
 stasya/hom9.txt,d/c/dc44a10dd5dd9c02cd9fb80a974636b14a817b12
 8
 les11.py,5/e/5e4cc187920d928326440c2a8709a3cbe62dacff
+>
+hw11/data.json,a/e/aedbd5c23d35208d898c1b1c21eb9963eba6809c
+<
+hw11/main.py,1/4/14cbe3072c632459c3fc25c51ee93da756e70a1f
+K
+lambda_filter_map_reduce.py,f/1/f13b8f27f2a454c6a877ff3263256cb494f03978
+8
+les12.py,3/1/31465ac6b46cb8172cabe0619c9c8913bb16639e

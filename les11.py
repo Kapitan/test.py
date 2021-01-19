@@ -59,5 +59,6 @@ dict_list = [
     {"name": "Joh", "age": "1900 - 1966"}
 ]
 
+print(dict_list[0].get("age"))
 new_dict_list = sorted(dict_list, key=key_sorted_by_age)
-print(new_dict_list)
+#print(new_dict_list)

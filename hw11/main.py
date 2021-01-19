@@ -33,16 +33,16 @@ def read_file_json(file_name):
         data = json.load(json_file)
     return data
 
-
-json_data = read_file_json("data.json")
-sorted_by_name = sorted(json_data, key=sort_by_name)
-for i in sorted_by_name:
-    print(i)
-print("=========")
-sorted_by_death = sorted(json_data, key=sort_by_death_year)
-for i in sorted_by_death:
-    print(i)
-print("===========================")
-sorted_by_text = sorted(json_data, key=sort_by_length)
-for i in sorted_by_text:
-    print(i)
+if __name__ == "__main__":
+    json_data = read_file_json("data.json")
+    sorted_by_name = sorted(json_data, key=sort_by_name)
+    for i in sorted_by_name:
+        print(i)
+    print("=========")
+    sorted_by_death = sorted(json_data, key=sort_by_death_year)
+    for i in sorted_by_death:
+        print(i)
+    print("===========================")
+    sorted_by_text = sorted(json_data, key=sort_by_length)
+    for i in sorted_by_text:
+        print(i)
