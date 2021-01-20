@@ -18,7 +18,6 @@
 # >>>miller.249@sgdyyur.com
 
 
-
 # Основа ДЗ - ДЗ №8 https://github.com/30nt/IntroPython_18_11/blob/main/Homeworks/lesson8.txt
 #
 # Суть задания - сздать класс EmailGenerator
@@ -76,41 +75,15 @@ class EmailGenerator:
         return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
 # 1) максимальное значение числа после имени от 100 до ...
 # 2) максимальное значение домена 2 уровня от 5 до ....
+
     def generate_email(self, maxint=999, maxdom=7):
         part2 = random.randint(100, maxint)
         part1 = random.choice(self.get_names())
         part4 = random.choice(self.get_domains())
-        part3 = ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(5, maxdom)))
+        part3 = ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(5, maxdom)))
         return part1.lower() + "." + str(part2) + "@" + part3 + "." + part4
 
 
 test = EmailGenerator("domains.txt", "names.txt")
 
 print(test.generate_email(2222222, 45))
-
-
-# with open("./domains.txt", "r") as domanes:
-#     domain_list = []
-#     for strings in domanes.readlines():
-#         domain_list.append(strings[1:-1])
-
-#print(domain_list)
-
-# with open("./names.txt", "r") as names:
-#     name_list = []
-#     for strings1 in names.readlines():
-#         name_list.append(strings1.split()[1])
-#         #print(strings1.split()[1])
-#
-# print(name_list)
-#
-# def create_e_mail(d_list, n_list):
-#     part2 = random.randint(100, 999)
-#     part1 = random.choice(n_list)
-#     part4 = random.choice(d_list)
-#     part3 = ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(5, 7)))
-#     return part1.lower() + "." + str(part2) + "@" + part3 + "." + part4
-#
-# test_one = create_e_mail(domain_list, name_list)
-#
-# print(string.ascii_uppercase)
