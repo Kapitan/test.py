@@ -74,18 +74,19 @@ class EmailGenerator:
 
     def __str__(self):
         return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
-
-    def generate_email(self):
-        part2 = random.randint(100, 999)
+# 1) максимальное значение числа после имени от 100 до ...
+# 2) максимальное значение домена 2 уровня от 5 до ....
+    def generate_email(self, maxint=999, maxdom=7):
+        part2 = random.randint(100, maxint)
         part1 = random.choice(self.get_names())
         part4 = random.choice(self.get_domains())
-        part3 = ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(5, 7)))
+        part3 = ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(5, maxdom)))
         return part1.lower() + "." + str(part2) + "@" + part3 + "." + part4
 
 
 test = EmailGenerator("domains.txt", "names.txt")
 
-print(test.generate_email())
+print(test.generate_email(2222222, 45))
 
 
 # with open("./domains.txt", "r") as domanes:
