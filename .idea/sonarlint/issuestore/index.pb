@@ -63,3 +63,10 @@ K
 lambda_filter_map_reduce.py,f/1/f13b8f27f2a454c6a877ff3263256cb494f03978
 8
 les12.py,3/1/31465ac6b46cb8172cabe0619c9c8913bb16639e
+=
+hw12/text.csv,3/f/3ff5541708f71e9fe0b46120755fee17cfa349fa
+@
+hw12/authors.txt,6/9/695ae1c8ba69beb20bd1a279b787264abf72a24d
+:
+
+hw12/12.py,f/e/fe85febaa70f176c4b11966f3b23cb14aa22f3d6
