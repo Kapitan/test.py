@@ -7,6 +7,7 @@
 import requests
 import csv
 import re
+import json
 
 
 def get_uniq_q_in_list(count):
@@ -39,7 +40,7 @@ def write_csv_file(data, filename="text.csv"):
 def sort_by_name(dict_obj):
     return dict_obj["quoteAuthor"]
 
-#write_csv_file(get_uniq_q_in_list(30))
+write_csv_file(get_uniq_q_in_list(30))
 
 # 2. Дан файл authors.txt
 # 2.1) написать функцию, которая считывает данные из этого файла,
@@ -99,9 +100,15 @@ def create_dict_from_string(data):
     dict_list = []
     author_name = r"-.+\w+\b's"
     for string in data:
-        dict_list.append({"name": (re.findall(author_name, string))[0][2:-3], "date": get_dey_fromstring(string) + "/" + change_month_name_to_number(string) + "/" + get_year_fromstring(string)})
+        dict_list.append({"name": (re.findall(author_name, string))[0][2:-2], "date": get_dey_fromstring(string) + "/" + change_month_name_to_number(string) + "/" + get_year_fromstring(string)})
 
     return dict_list
 
 #print(create_dict_from_string(read_file_txt("authors.txt")))
 
+# Написать функцию, которая сохраняет результат пункта 2.2 в json файл
+def write_json_file(data, filename="test2.json"):
+    with open(filename, "w") as jsonfile:
+        json.dump(data, jsonfile, ensure_ascii=False, indent=4)
+
+write_json_file(create_dict_from_string(read_file_txt("authors.txt")))
