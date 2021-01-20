@@ -21,7 +21,7 @@ def get_uniq_q_in_list(count):
     x = []
     while len(x) < count:
         r = (requests.get(url, params=parametr)).json()
-        if (not r in x) and (r["quoteAuthor"] != ''):
+        if (r not in x) and (r["quoteAuthor"] != ''):
             x.append(r)
     return x
 
@@ -39,6 +39,7 @@ def write_csv_file(data, filename="text.csv"):
 
 def sort_by_name(dict_obj):
     return dict_obj["quoteAuthor"]
+
 
 write_csv_file(get_uniq_q_in_list(30))
 
@@ -58,7 +59,7 @@ def read_file_txt(filename):
                 list_of.append(strings1)
     return list_of
 
-#print(read_file_txt("authors.txt"))
+# print(read_file_txt("authors.txt"))
 
 # 2.2) Написать функцию, которая принимает список строк полученной в пункте 2.1, и возвращает список словарей
 # в формате {"name": name, "date": date},
@@ -79,7 +80,7 @@ def get_year_fromstring(string):
 
 
 def change_month_name_to_number(string):
-    month_in_year = {"January" : "01",
+    month_in_year = {"January": "01",
                      "February": "02",
                      "March": "03",
                      "April": "04",
@@ -104,11 +105,14 @@ def create_dict_from_string(data):
 
     return dict_list
 
-#print(create_dict_from_string(read_file_txt("authors.txt")))
+# print(create_dict_from_string(read_file_txt("authors.txt")))
 
 # Написать функцию, которая сохраняет результат пункта 2.2 в json файл
+
+
 def write_json_file(data, filename="test2.json"):
     with open(filename, "w") as jsonfile:
         json.dump(data, jsonfile, ensure_ascii=False, indent=4)
+
 
 write_json_file(create_dict_from_string(read_file_txt("authors.txt")))
