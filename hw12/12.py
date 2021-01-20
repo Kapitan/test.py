@@ -6,6 +6,8 @@
 # Перед сохранением в csv, записи отсортировать по автору (в алфавитном порядке).
 import requests
 import csv
+import re
+
 
 def get_uniq_q_in_list(count):
     url = "http://api.forismatic.com/api/1.0/"
@@ -22,6 +24,7 @@ def get_uniq_q_in_list(count):
             x.append(r)
     return x
 
+
 def write_csv_file(data, filename="text.csv"):
     data2 = sorted(data, key=sort_by_name)
     with open(filename, "w") as filecsv:
@@ -32,6 +35,7 @@ def write_csv_file(data, filename="text.csv"):
         for row in data2:
             writer.writerow(row)
 
+
 def sort_by_name(dict_obj):
     return dict_obj["quoteAuthor"]
 
@@ -41,7 +45,7 @@ def sort_by_name(dict_obj):
 # 2.1) написать функцию, которая считывает данные из этого файла,
 # возвращая СПИСОК тех строк в которых есть полная дата, писатель и указание на его день рождения или смерти.
 # Например: 26th February 1802 - Victor Hugo's birthday - author of Les Misérables.
-import re
+
 
 def read_file_txt(filename):
     list_of = []
@@ -53,8 +57,51 @@ def read_file_txt(filename):
                 list_of.append(strings1)
     return list_of
 
-print(len(read_file_txt("authors.txt")))
+#print(read_file_txt("authors.txt"))
 
 # 2.2) Написать функцию, которая принимает список строк полученной в пункте 2.1, и возвращает список словарей
 # в формате {"name": name, "date": date},
 # где name это имя автора, а date - дата из строки в формате "dd/mm/yyyy" (d-день, m-месяц, y-год)
+
+
+def get_dey_fromstring(string):
+    dayin = r"\d{1,2}[a-z]{2}"  # c отстатком букв
+    if len(re.findall(dayin, string)[0][:-2]) == 1:
+        return "0" + re.findall(dayin, string)[0][:-2]
+    else:
+        return re.findall(dayin, string)[0][:-2]
+
+
+def get_year_fromstring(string):
+    yearin = r"\d{4}"
+    return re.findall(yearin, string)[0]
+
+
+def change_month_name_to_number(string):
+    month_in_year = {"January" : "01",
+                     "February": "02",
+                     "March": "03",
+                     "April": "04",
+                     "May": "05",
+                     "June": "06",
+                     "July": "07",
+                     "August": "08",
+                     "September": "09",
+                     "October": "10",
+                     "November": "11",
+                     "December": "12"}
+    for month in month_in_year:
+        if month in string:
+            return month_in_year[month]
+
+
+def create_dict_from_string(data):
+    dict_list = []
+    author_name = r"-.+\w+\b's"
+    for string in data:
+        dict_list.append({"name": (re.findall(author_name, string))[0][2:-3], "date": get_dey_fromstring(string) + "/" + change_month_name_to_number(string) + "/" + get_year_fromstring(string)})
+
+    return dict_list
+
+#print(create_dict_from_string(read_file_txt("authors.txt")))
+
