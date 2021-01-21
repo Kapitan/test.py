@@ -54,6 +54,13 @@ class EmailGenerator:
         self.domains = self.get_domains()
         self.names = self.get_names()
 
+# 3. При выводе на печать экземпляра класса вывести количество элементов в атрибутах domains и names
+# Пример:
+# print(email_generator)
+# >>>len domains = 8, len names = 34
+
+        def __str__(self):
+            return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
 
     def get_domains(self):
         domain_list = []
@@ -69,13 +76,6 @@ class EmailGenerator:
                 name_list.append(strings1.split()[1])
         return name_list
 
-# 3. При выводе на печать экземпляра класса вывести количество элементов в атрибутах domains и names
-# Пример:
-# print(email_generator)
-# >>>len domains = 8, len names = 34
-
-    def __str__(self):
-        return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
 # 1) максимальное значение числа после имени от 100 до ...
 # 2) максимальное значение домена 2 уровня от 5 до ....
 
