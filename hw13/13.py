@@ -89,4 +89,4 @@ class EmailGenerator:
 
 test = EmailGenerator("domains.txt", "names.txt")
 
-#print(test.names)
+# print(test.names)
