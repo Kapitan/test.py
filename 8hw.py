@@ -34,6 +34,7 @@ with open("./names.txt", "r") as names:
 
 print(name_list)
 
+
 def create_e_mail(d_list, n_list):
     part2 = random.randint(100, 999)
     part1 = random.choice(n_list)

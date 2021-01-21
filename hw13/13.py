@@ -51,6 +51,9 @@ class EmailGenerator:
     def __init__(self, path_file_d, path_file_n):
         self.path_file_d = path_file_d
         self.path_file_n = path_file_n
+        self.domains = self.get_domains()
+        self.names = self.get_names()
+
 
     def get_domains(self):
         domain_list = []
@@ -86,4 +89,4 @@ class EmailGenerator:
 
 test = EmailGenerator("domains.txt", "names.txt")
 
-print(test.generate_email(2222222, 45))
+#print(test.names)
