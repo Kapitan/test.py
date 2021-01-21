@@ -59,8 +59,8 @@ class EmailGenerator:
 # print(email_generator)
 # >>>len domains = 8, len names = 34
 
-        def __str__(self):
-            return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
+    def __str__(self):
+        return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
 
     def get_domains(self):
         domain_list = []
