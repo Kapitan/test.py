@@ -36,7 +36,7 @@ class Unit:
     strength = 1
 
     def healing(self):
-        if (self.hp < 90) and (self.hp > 0):
+        if (self.hp <= 90) and (self.hp > 0):
             self.hp += 10
         elif (self.hp < 100) and (self.hp > 90):
             self.hp = 100

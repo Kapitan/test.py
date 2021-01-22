@@ -79,11 +79,11 @@ class EmailGenerator:
 # 1) максимальное значение числа после имени от 100 до ...
 # 2) максимальное значение домена 2 уровня от 5 до ....
 
-    def generate_email(self, maxint=999, maxdom=7):
+    def generate_email(self, maxint=999, max_domain=7):
         part2 = random.randint(100, maxint)
         part1 = random.choice(self.get_names())
         part4 = random.choice(self.get_domains())
-        part3 = ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(5, maxdom)))
+        part3 = ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(5, max_domain)))
         return part1.lower() + "." + str(part2) + "@" + part3 + "." + part4
 
 
