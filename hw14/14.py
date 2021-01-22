@@ -89,11 +89,17 @@ class Archer(Unit):
 
 
 testS = Archer("Stasya", "vonuchki")
-testA = Knight("Kashtan", "voin YP4K")
-print(testA)
 print(testS)
 testS.hp = 54
 print(testS.clan, testS.hp, testS.agility)
 testS.healing()
+testS.increase_agility()
+testS.increase_agility()
+testS.increase_agility()
+testS.increase_agility()
+testS.increase_agility()
+testS.increase_agility()
+testS.increase_agility()
+testS.increase_agility()
 
-print(testS.hp)
+print(testS.hp, testS.agility)
