@@ -88,7 +88,7 @@ class Archer(Unit):
 
 
 
-testS = Archer("Stasya", "vonuchki")
+testS = Archer("Stasya", "superclan")
 print(testS)
 testS.hp = 54
 print(testS.clan, testS.hp, testS.agility)
