@@ -60,7 +60,7 @@ class EmailGenerator:
 # >>>len domains = 8, len names = 34
 
     def __str__(self):
-        return f"len domains = {len(self.get_domains())}, len names = {len(self.get_names())}"
+        return f"len domains = {len(self.domains)}, len names = {len(self.names)}"
 
     def get_domains(self):
         domain_list = []
@@ -81,8 +81,8 @@ class EmailGenerator:
 
     def generate_email(self, maxint=999, max_domain=7):
         part2 = random.randint(100, maxint)
-        part1 = random.choice(self.get_names())
-        part4 = random.choice(self.get_domains())
+        part1 = random.choice(self.names)
+        part4 = random.choice(self.domains)
         part3 = ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(5, max_domain)))
         return part1.lower() + "." + str(part2) + "@" + part3 + "." + part4
 
