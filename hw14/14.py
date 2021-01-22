@@ -28,7 +28,7 @@ class Unit:
         self.clan = clan
 
     def __str__(self):
-        return f"jast unit"
+        return "jast unit"
 
     hp = 100
     agility = 1
