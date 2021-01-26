@@ -26,14 +26,16 @@ class Unit:
     def __init__(self, name, clan):
         self.name = name
         self.clan = clan
+        self.hp = 100
+        self._agility = 1
+        self.intelligence = 1
+        self.strength = 1
+        self.base_skill = 1
 
     def __str__(self):
         return "jast unit"
 
-    hp = 100
-    agility = 1
-    intelligence = 1
-    strength = 1
+
 
     def healing(self):
         if (self.hp <= 90) and (self.hp > 0):
@@ -45,7 +47,20 @@ class Unit:
         elif self.hp <= 0:
             print("you can't heal yourself, you are dead!")
 
+
+    def increase_skill(self):
+        if self.base_skill < 10:
+            self.base_skill += 1
+
+
+
+
+
 class Mage(Unit):
+    def __init__(self, name, clan, type_magic):
+        super().__init__(name, clan)
+        self.type_magic = type_magic
+        self.unit_type = "mage"
 
     def __str__(self):
         return f"Unit Class Mage with name {self.name} and Clan {self.clan}"
@@ -61,6 +76,10 @@ class Mage(Unit):
 
 
 class Knight(Unit):
+    def __init__(self, name, clan, type_weapon):
+        super().__init__(name, clan)
+        self.type_weapon = type_weapon
+        self.unit_type = "knight"
 
     def __str__(self):
         return f"Unit Class Knight with name {self.name} and Clan {self.clan}"
@@ -74,6 +93,11 @@ class Knight(Unit):
             self.strength = 1
 
 class Archer(Unit):
+
+    def __init__(self, name, clan, type_bow):
+        super().__init__(name, clan)
+        self.type_bow = type_bow
+        self.unit_type = "archer"
 
     def __str__(self):
         return f"Unit Class Archer with name {self.name} and Clan {self.clan}"
@@ -89,7 +113,7 @@ class Archer(Unit):
 
 
 testS = Archer("Stasya", "superclan")
-print(testS)
+print(testS.)
 testS.hp = 54
 print(testS.clan, testS.hp, testS.agility)
 testS.healing()
