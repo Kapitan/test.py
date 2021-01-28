@@ -33,7 +33,7 @@ class Unit:
         self.base_skill = 1
 
     def __str__(self):
-        return "jast unit"
+        return "just unit"
 
 
 
@@ -51,6 +51,7 @@ class Unit:
     def increase_skill(self):
         if self.base_skill < 10:
             self.base_skill += 1
+
 
 
 
@@ -74,7 +75,6 @@ class Mage(Unit):
             self.intelligence = 1
 
 
-
 class Knight(Unit):
     def __init__(self, name, clan, type_weapon):
         super().__init__(name, clan)
@@ -91,6 +91,7 @@ class Knight(Unit):
             self.strength = 10
         elif self.strength <= 0:
             self.strength = 1
+
 
 class Archer(Unit):
 
@@ -111,7 +112,6 @@ class Archer(Unit):
             self.agility = 1
 
 
-
 testS = Archer("Stasya", "superclan")
 print(testS.)
 testS.hp = 54
@@ -125,5 +125,3 @@ testS.increase_agility()
 testS.increase_agility()
 testS.increase_agility()
 testS.increase_agility()
-
-print(testS.hp, testS.agility)
