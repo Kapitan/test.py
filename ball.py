@@ -20,7 +20,7 @@ border.goto(300, 300)
 
 ball = turtle.Turtle()
 ball.hideturtle()
-ball.up()
+#ball.up()
 ball.shape("circle")
 fx = random.randint(-200, 200)
 fy = random.randint(-200, 200)
