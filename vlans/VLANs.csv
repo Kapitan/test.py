@@ -1,5 +1,0 @@
-Name,Description,VLANMin,VLANMax,Type
-"Fabric A","","4093","4093","8"
-"Fabric B","","4092","4092","8"
-"SERVERS","","100","100","4"
-"VLAN 1","VLAN 1","1","1","2"
