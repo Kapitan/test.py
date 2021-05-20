@@ -39,8 +39,8 @@ data = {
 }
 
 
-r = requests.post('https://testprocessingback.eva.ua/transactions/getAll', json=data)
-# r = requests.post('http://10.255.253.40:8087/transactions/getAll', json=data)
+r = requests.post('https:///transactions/getAll', json=data)
+# r = requests.post('http:///transactions/getAll', json=data)
 
 print(r.text)
 print(r.url)
